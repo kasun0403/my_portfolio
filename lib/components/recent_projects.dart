@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kasun_tharanga/components/project_card.dart';
 import 'package:kasun_tharanga/data/project_data.dart';
 import 'package:kasun_tharanga/pages/project_details_page.dart';
+import 'package:kasun_tharanga/pages/second_project.dart';
 
 class RecentProjects extends StatelessWidget {
   const RecentProjects({super.key});
@@ -25,12 +26,21 @@ class RecentProjects extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ProjectDetailsPage(),
+                      builder: (context) => const WeatherAppProject(),
                     ),
                   );
                 },
                 child: ProjectCard(project: ProjectData.projects[0])),
-            ProjectCard(project: ProjectData.projects[1]),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PortfolioProject(),
+                    ),
+                  );
+                },
+                child: ProjectCard(project: ProjectData.projects[1])),
             ProjectCard(project: ProjectData.projects[2]),
           ],
         ),

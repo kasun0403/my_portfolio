@@ -33,7 +33,7 @@ class ProjectCard extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Image.asset("assets/images/simple_weather_app.png"),
+                child: Image.asset(project.imgURL),
               ),
               const SizedBox(height: 10),
             ],

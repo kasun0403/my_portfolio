@@ -1,94 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:kasun_tharanga/components/project_details.dart';
 
-class ProjectDetailsPage extends StatelessWidget {
-  const ProjectDetailsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Weather App"),
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset("assets/images/simple_weather_app.png"),
-            const SizedBox(height: 16),
-            const Text(
-              "Weather Application",
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              "A Flutter app that provides real-time weather updates using OpenWeatherMap API.",
-              style: TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              "Key Features:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            const BulletPoint(
-                text: "Fetches weather by city name or current location."),
-            const BulletPoint(text: "Supports light and dark themes."),
-            const BulletPoint(text: "Persistent theme preferences."),
-            const BulletPoint(text: "Lottie animations for enhanced UI."),
-            const SizedBox(height: 16),
-            const Text(
-              "Technical Details:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            const ExpansionTile(
-              title: Text("Packages Used"),
-              children: [
-                Text(
-                  "• google_fonts\n• http\n• flutter_dotenv\n• geolocator\n• geocoding\n• provider\n• shared_preferences\n• lottie",
-                ),
-              ],
-            ),
-            const ExpansionTile(
-              title: Text("Secure API Key Management"),
-              children: [
-                Text(
-                    "API keys are managed securely using the flutter_dotenv package."),
-              ],
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Add live demo or GitHub link
-              },
-              child: const Text("View on GitHub"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class BulletPoint extends StatelessWidget {
-  final String text;
-
-  const BulletPoint({super.key, required this.text});
+class WeatherAppProject extends StatelessWidget {
+  const WeatherAppProject({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Icon(Icons.check, color: Colors.green),
-        const SizedBox(width: 8),
-        Expanded(
-          child: Text(
-            text,
-            style: const TextStyle(fontSize: 16),
-          ),
-        ),
+    return const ProjectDetailsPage(
+      imagePath: 'assets/images/simple_weather_app.png',
+      projectTitle: 'Simple Weather Application 🌦️',
+      projectOverview:
+          'A Flutter-based mobile application that delivers real-time weather updates for any city or your current location. This app combines seamless user experience, robust state management, and precise API integrations to fetch and display weather data effortlessly.',
+      features: [
+        '🌍 Weather based on GPS location',
+        '🔍 Search weather by city name',
+        '🎨 Light and Dark themes with persistence',
+        '🔑 Secure API integration using dotenv',
+        '💡 Lottie animations for weather themes'
+      ],
+      techStack: [
+        'Language: Dart',
+        'Packages: http, provider, shared_preferences',
+        'API: OpenWeather API',
+        'Utilities: flutter_dotenv, geolocator, geocoding'
+      ],
+      challenges:
+          '• Implemented robust error handling for API failures.\n• Ensured smooth theme transitions for a polished UI.\n• Integrated multiple weather conditions with corresponding animations.',
+      futureScope: [
+        'Add multi-day weather forecasts',
+        'Expand functionality to include weather alerts'
       ],
     );
   }
