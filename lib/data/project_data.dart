@@ -4,8 +4,7 @@ class ProjectData {
   static final List<ProjectModel> projects = [
     ProjectModel(
       actionLink: '#',
-      imgURL:
-          'https://eager-williams-af0d00.netlify.app/assets/images/expenseTracker.png',
+      imgURL: 'assets/images/simple_weather_app.png"',
       projectName: 'Expense Tracker',
     ),
     ProjectModel(

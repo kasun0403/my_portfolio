@@ -72,7 +72,7 @@ class ContactSection extends StatelessWidget {
                         Icons.location_on, 'Location', 'Kyoto, Japan', ""),
                   ],
                 ),
-          const SizedBox(height: 40),
+          // const SizedBox(height: 40),
           // const _ContactForm(),
         ],
       ),

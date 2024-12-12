@@ -5,5 +5,8 @@ class ProjectModel {
   final String actionLink;
 
   ProjectModel(
-      {required this.imgURL, required this.projectName, this.shortDescription, required this.actionLink});
+      {required this.imgURL,
+      required this.projectName,
+      this.shortDescription,
+      required this.actionLink});
 }

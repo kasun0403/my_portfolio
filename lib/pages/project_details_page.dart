@@ -14,7 +14,7 @@ class ProjectDetailsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset("assets/weather_app_banner.png"),
+            Image.asset("assets/images/simple_weather_app.png"),
             const SizedBox(height: 16),
             const Text(
               "Weather Application",
