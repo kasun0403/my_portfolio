@@ -63,12 +63,6 @@ class TopSkills extends StatelessWidget {
       child: Row(
         children: [
           Lottie.asset(iconUrl, height: 75, width: 75, fit: BoxFit.contain),
-          // Image.network(
-          //   iconUrl,
-          //   height: 50,
-          //   width: 50,
-          //   fit: BoxFit.contain,
-          // ),
           const SizedBox(width: 20),
           Expanded(
             child: Column(

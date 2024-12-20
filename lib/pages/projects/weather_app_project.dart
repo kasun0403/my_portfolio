@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kasun_tharanga/components/project_details.dart';
+import 'package:kasun_tharanga/pages/project_details.dart';
 
 class WeatherAppProject extends StatelessWidget {
   const WeatherAppProject({super.key});

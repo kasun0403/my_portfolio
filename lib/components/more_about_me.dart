@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kasun_tharanga/utils/responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MoreAboutMe extends StatelessWidget {
   const MoreAboutMe({super.key});
@@ -56,8 +57,13 @@ class MoreAboutMe extends StatelessWidget {
           const SizedBox(height: 20),
           Center(
             child: ElevatedButton(
-              onPressed: () {
-                // Action for "Learn More" button
+              onPressed: () async {
+                final url = Uri.parse('https://flutter.dev');
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url, mode: LaunchMode.externalApplication);
+                } else {
+                  print('Could not launch $url');
+                }
               },
               style: ElevatedButton.styleFrom(
                 padding:

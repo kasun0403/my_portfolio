@@ -5,17 +5,17 @@ class ProjectData {
     ProjectModel(
       actionLink: '#',
       imgURL: 'assets/images/simple_weather_app.png',
-      projectName: 'Expense Tracker',
+      projectName: 'Simple weather application',
     ),
     ProjectModel(
       actionLink: '#',
       imgURL: 'assets/images/my_portfolio_site.png',
-      projectName: 'Netflix Clone',
+      projectName: 'Portolio site',
     ),
     ProjectModel(
       actionLink: '#',
-      imgURL: 'assets/images/my_portfolio_site.png',
-      projectName: 'Greeny Earth',
+      imgURL: 'assets/images/authentication_app.png',
+      projectName: 'Authentication application',
     ),
   ];
 }

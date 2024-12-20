@@ -85,7 +85,7 @@ class HomePage extends StatelessWidget {
                   ContactSection(),
                   SizedBox(height: 50),
                   Footer(),
-                  SizedBox(height: 20),
+                  // SizedBox(height: 20),
                 ],
               ),
             ),
