@@ -119,8 +119,8 @@ class ContactSection extends StatelessWidget {
   }
 }
 
-class _ContactForm extends StatelessWidget {
-  const _ContactForm();
+class ContactForm extends StatelessWidget {
+  const ContactForm({super.key});
 
   @override
   Widget build(BuildContext context) {

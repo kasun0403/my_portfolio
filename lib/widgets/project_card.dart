@@ -53,7 +53,7 @@ class ProjectSection extends StatelessWidget {
         crossAxisCount: 3,
         childAspectRatio: 6 / 4,
         crossAxisSpacing: 10,
-        children: [
+        children: const [
           ProjectCard(
             title: 'Project 1',
             imagePath: 'assets/images/profile.jpg',

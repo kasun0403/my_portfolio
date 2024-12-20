@@ -24,7 +24,7 @@ class ProjectDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Project Details",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -60,7 +60,7 @@ class ProjectDetailsPage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               projectOverview,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
             // Key Features
@@ -78,7 +78,7 @@ class ProjectDetailsPage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               challenges,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
             // Future Scope

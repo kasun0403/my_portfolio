@@ -58,9 +58,9 @@ class MoreAboutMe extends StatelessWidget {
           Center(
             child: ElevatedButton(
               onPressed: () async {
-                final url = Uri.parse('https://flutter.dev');
+                final url = Uri.parse('assets/kasun_tharanga.pdf');
                 if (await canLaunchUrl(url)) {
-                  await launchUrl(url, mode: LaunchMode.externalApplication);
+                  await launchUrl(url, mode: LaunchMode.platformDefault);
                 } else {
                   print('Could not launch $url');
                 }
