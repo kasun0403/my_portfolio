@@ -4,6 +4,7 @@ import 'package:kasun_tharanga/data/project_data.dart';
 import 'package:kasun_tharanga/pages/projects/firebase_auth_project.dart';
 import 'package:kasun_tharanga/pages/projects/weather_app_project.dart';
 import 'package:kasun_tharanga/pages/projects/portfolio_web_project.dart';
+import 'package:kasun_tharanga/utils/responsive.dart';
 
 class RecentProjects extends StatelessWidget {
   const RecentProjects({super.key});
@@ -12,10 +13,10 @@ class RecentProjects extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
+        Text(
           'Some of my Recent Projects',
           style: TextStyle(
-            fontSize: 24,
+            fontSize: Responsive.isMobile(context) ? 20 : 32,
             fontWeight: FontWeight.bold,
           ),
         ),

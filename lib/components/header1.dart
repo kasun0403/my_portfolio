@@ -56,18 +56,22 @@ class Header1 extends StatelessWidget {
       width: Responsive.isMobile(context)
           ? Responsive.mdqw(context) * 0.9
           : Responsive.mdqw(context) / 2,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Hello, I\'m Edirisooriya Mudiyanselage Kasun Tharanga Dilshan',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: Responsive.isMobile(context) ? 24 : 32,
+                fontWeight: FontWeight.bold),
           ),
           Text(
             'Flutter Developer',
-            style: TextStyle(fontSize: 24, color: Colors.grey),
+            style: TextStyle(
+                fontSize: Responsive.isMobile(context) ? 18 : 24,
+                color: Colors.grey),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
         ],
       ),
     );

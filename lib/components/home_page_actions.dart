@@ -39,7 +39,7 @@ class HomePageActions extends StatelessWidget {
       _buildNavButton(
         context,
         'Recent Projects',
-        1400,
+        1000,
         scrollDur,
         isMobile,
       ),
@@ -68,7 +68,7 @@ class HomePageActions extends StatelessWidget {
           );
         },
         style: TextButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
           ),

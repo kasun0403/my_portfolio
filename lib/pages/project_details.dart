@@ -1,4 +1,7 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:kasun_tharanga/utils/colors.dart';
+import 'package:kasun_tharanga/utils/responsive.dart';
 
 class ProjectDetailsPage extends StatelessWidget {
   final String imagePath;
@@ -8,6 +11,8 @@ class ProjectDetailsPage extends StatelessWidget {
   final List<String> techStack;
   final String challenges;
   final List<String> futureScope;
+  final Function()? github;
+  final List<String> screenshotPaths;
 
   const ProjectDetailsPage({
     super.key,
@@ -18,6 +23,8 @@ class ProjectDetailsPage extends StatelessWidget {
     required this.techStack,
     required this.challenges,
     required this.futureScope,
+    required this.github,
+    required this.screenshotPaths,
   });
 
   @override
@@ -28,7 +35,7 @@ class ProjectDetailsPage extends StatelessWidget {
           "Project Details",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.blueGrey.shade900,
+        backgroundColor: AppColors.kBgColor,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -51,10 +58,11 @@ class ProjectDetailsPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.blueGrey.shade900,
+                color: AppColors.kWhiteColor,
               ),
             ),
             const SizedBox(height: 10),
+
             // Project Overview
             _buildSectionTitle("Project Overview"),
             const SizedBox(height: 8),
@@ -86,9 +94,60 @@ class ProjectDetailsPage extends StatelessWidget {
             const SizedBox(height: 8),
             ...futureScope.map((scope) => _buildFeatureItem(scope)),
             const SizedBox(height: 30),
+            _buildGithubActionButton(github),
+            if (screenshotPaths.isNotEmpty) ...[
+              const SizedBox(height: 20),
+              _buildSectionTitle("Screenshots"),
+              const SizedBox(height: 8),
+              _buildScreenshots(screenshotPaths, context)
+            ],
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildScreenshots(List<String> screenshotPaths, BuildContext context) {
+    return CarouselSlider(
+      options: CarouselOptions(
+        height: MediaQuery.of(context).size.width * 0.3,
+        // aspectRatio: 16 / 9,
+        autoPlay: true,
+        enlargeCenterPage: false,
+        enableInfiniteScroll: true,
+        viewportFraction: 0.33,
+      ),
+      items: screenshotPaths.map((path) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+              margin: const EdgeInsets.symmetric(horizontal: 5.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: Image.asset(
+                  path,
+                  fit: BoxFit.contain,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                ),
+              ),
+            );
+          },
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildGithubActionButton(Function()? function) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildSectionTitle("View on Github"),
+        const SizedBox(height: 8),
+        TextButton(
+          onPressed: function,
+          child: const Text("Github"),
+        ),
+      ],
     );
   }
 
@@ -98,7 +157,7 @@ class ProjectDetailsPage extends StatelessWidget {
       style: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w600,
-        color: Colors.blueGrey.shade700,
+        color: AppColors.kWhiteColor,
       ),
     );
   }

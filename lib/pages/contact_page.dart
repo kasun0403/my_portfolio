@@ -15,10 +15,10 @@ class ContactSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'Get in Touch',
             style: TextStyle(
-              fontSize: 28,
+              fontSize: Responsive.isMobile(context) ? 20 : 32,
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -19,7 +19,7 @@ class MoreAboutMe extends StatelessWidget {
               child: Text(
                 'About Me',
                 style: TextStyle(
-                  fontSize: Responsive.isMobile(context) ? 24 : 32,
+                  fontSize: Responsive.isMobile(context) ? 20 : 32,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -60,7 +60,9 @@ class MoreAboutMe extends StatelessWidget {
               onPressed: () async {
                 final url = Uri.parse('assets/kasun_tharanga.pdf');
                 if (await canLaunchUrl(url)) {
-                  await launchUrl(url, mode: LaunchMode.platformDefault);
+                  await launchUrl(
+                    url,
+                  );
                 } else {
                   print('Could not launch $url');
                 }

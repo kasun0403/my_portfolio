@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kasun_tharanga/utils/responsive.dart';
-import 'package:lottie/lottie.dart';
 
 class TopSkills extends StatelessWidget {
   const TopSkills({super.key});
@@ -9,10 +9,10 @@ class TopSkills extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
+        Text(
           'My Professional Skills',
           style: TextStyle(
-            fontSize: 28,
+            fontSize: Responsive.isMobile(context) ? 20 : 32,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -23,31 +23,44 @@ class TopSkills extends StatelessWidget {
                 ? 20
                 : Responsive.mdqw(context) / 6,
           ),
-          child: Column(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildSkillRow(
-                context,
-                'Flutter',
-                'Mobile Development',
-                'assets/lottie/flutter.json',
+              Expanded(
+                child: Column(
+                  children: [
+                    _buildSkillRow(
+                      context,
+                      'Flutter',
+                      'Mobile Development',
+                      'assets/svgs/flutter.svg',
+                    ),
+                    _buildSkillRow(
+                      context,
+                      'Firebase',
+                      'Database Management',
+                      'assets/svgs/firebase.svg',
+                    ),
+                  ],
+                ),
               ),
-              _buildSkillRow(
-                context,
-                'Firebase',
-                'Database Management',
-                'assets/lottie/firebaselottie.json',
-              ),
-              _buildSkillRow(
-                context,
-                'REST API & Google Map API',
-                'API Integration',
-                'assets/lottie/api.json',
-              ),
-              _buildSkillRow(
-                context,
-                'Git',
-                'Version Control',
-                'assets/lottie/git.json',
+              Expanded(
+                child: Column(
+                  children: [
+                    _buildSkillRow(
+                      context,
+                      'REST API & Google Map API',
+                      'API Integration',
+                      'assets/svgs/api.svg',
+                    ),
+                    _buildSkillRow(
+                      context,
+                      'Git',
+                      'Version Control',
+                      'assets/svgs/git.svg',
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -62,7 +75,7 @@ class TopSkills extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
-          Lottie.asset(iconUrl, height: 75, width: 75, fit: BoxFit.contain),
+          SvgPicture.asset(iconUrl, height: 50, width: 50, fit: BoxFit.contain),
           const SizedBox(width: 20),
           Expanded(
             child: Column(
@@ -70,15 +83,15 @@ class TopSkills extends StatelessWidget {
               children: [
                 Text(
                   skill,
-                  style: const TextStyle(
-                    fontSize: 18,
+                  style: TextStyle(
+                    fontSize: Responsive.isMobile(context) ? 12 : 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   description,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: Responsive.isMobile(context) ? 9 : 14,
                     color: Colors.grey[600],
                   ),
                 ),
