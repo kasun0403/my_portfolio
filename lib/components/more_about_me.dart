@@ -70,7 +70,7 @@ class MoreAboutMe extends StatelessWidget {
                           Expanded(
                             child: PhotoView(
                               imageProvider: const AssetImage(
-                                  'assets/images/Kasun Tharanga.png'),
+                                  'assets/images/kasun_tharanga.png'),
                               minScale: PhotoViewComputedScale.contained,
                               maxScale: PhotoViewComputedScale.covered,
                             ),
