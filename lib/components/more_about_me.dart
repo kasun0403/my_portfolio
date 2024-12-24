@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kasun_tharanga/utils/responsive.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:photo_view/photo_view.dart';
 
 class MoreAboutMe extends StatelessWidget {
   const MoreAboutMe({super.key});
@@ -58,21 +58,40 @@ class MoreAboutMe extends StatelessWidget {
           Center(
             child: ElevatedButton(
               onPressed: () async {
-                final url = Uri.parse('assets/kasun_tharanga.pdf');
-                if (await canLaunchUrl(url)) {
-                  await launchUrl(
-                    url,
-                  );
-                } else {
-                  print('Could not launch $url');
-                }
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Dialog(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Stack(
+                        children: [
+                          Expanded(
+                            child: PhotoView(
+                              imageProvider: const AssetImage(
+                                  'assets/images/Kasun Tharanga.png'),
+                              minScale: PhotoViewComputedScale.contained,
+                              maxScale: PhotoViewComputedScale.covered,
+                            ),
+                          ),
+                          IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              icon: const Icon(Icons.arrow_back)),
+                        ],
+                      ),
+                    );
+                  },
+                );
               },
               style: ElevatedButton.styleFrom(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               ),
               child: const Text(
-                'More info',
+                'View Resume',
                 style: TextStyle(fontSize: 16),
               ),
             ),

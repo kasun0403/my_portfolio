@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:kasun_tharanga/utils/colors.dart';
-import 'package:kasun_tharanga/utils/responsive.dart';
 
 class ProjectDetailsPage extends StatelessWidget {
   final String imagePath;
